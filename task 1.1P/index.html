@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+  }
+
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .container:hover .overlay {
+    opacity: 1;
+  }
+
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .navbar {
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .navbar a {
+    float: left;
+    display: block;
+    color: rgb(0, 220, 254);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .navbar a:hover {
+    background: #ddd;
+    color: rgb(0, 220, 254);
+  }
+
+  .main {
+    padding: 16px;
+    margin-top: 60px; /* Adjusted for navbar height */
+    text-align: center; /* Center content horizontally */
+  }
+
+  .profile-container {
+    display: inline-block; /* Ensure the container doesn't span full width */
+    text-align: center; /* Center content inside the container */
+  }
+
+  .profile-container img {
+    max-width: 150px; /* Set specific width for the image */
+    height: auto;
+    border-radius: 60%; /* Optional, if you want a circular image */
+    display: block; /* Make the image block-level */
+    margin: 0 auto; /* Center the image */
+  }
+
+  .description {
+    text-align: center; /* Center the paragraph */
+    margin-top: 20px; /* Space between the profile image and text */
+  }
+
+  .description p {
+    color: rgb(0, 220, 254); /* Text color */
+  }
+
+  .photo-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the grid horizontally */
+    margin-top: 20px; /* Space above the photo grid */
+  }
+
+  .photo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space between each photo-description pair */
+    text-align: left; /* Align text to the left */
+  }
+
+  .photo-container img {
+    max-width: 150px;
+    height: 150px; /* Makes the images square */
+    object-fit: cover; /* Ensures the image covers the square without distortion */
+    border-radius: 10px; /* Rounded corners for the photos */
+    margin-right: 15px; /* Space between image and text */
+  }
+
+  .photo-container p {
+    color: rgb(0, 220, 254); /* Text color */
+  }
+
+  .photo-grid h3 {
+    color: rgb(0, 220, 254); /* Text color */
+    text-align: center; /* Center the header text */
+    margin-bottom: 20px; /* Space below the header */
+    width: 100%; /* Ensure the heading takes up the full width of the grid */
+  }
+
+  .blue-text {
+    color: rgb(0, 220, 254); /* Text color */
+  }
+
+  .responsive-images {
+    text-align: center; /* Center the images and header */
+    margin-top: 20px; /* Space above the responsive images section */
+  }
+
+  .responsive-images h2 {
+    color: rgb(0, 220, 254); /* Header text color */
+    margin-bottom: 20px; /* Space below the header */
+  }
+
+  .responsive-images .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+    justify-content: center; /* Center the images */
+  }
+
+  .responsive-images img {
+    width: 100%;
+    max-width: 200px; /* Max width for larger screens */
+    height: auto;
+    border-radius: 10px; /* Rounded corners for the images */
+  }
+
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .responsive-images .image-gallery {
+      flex-direction: column; /* Stack images vertically on smaller screens */
+      align-items: center; /* Center images */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#About">About</a>
+  <a href="#Work">Work</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<h2>Fade in Overlay</h2>
+
+<div class="container">
+  <img src="Homepage.jpeg" alt="Deakin Logo" class="image" width="1600" height="500">
+  <div class="overlay">
+    <div class="text">Hey, I am Ankit.</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="profile-container">
+    <img src="Profile.jpeg" alt="Profile">
+  </div>
+
+  <div class="description">
+    <p>I am a full-stack developer based in Melbourne, Australia.</p>
+    <p>_____________________________</p>
+  </div>
+
+  <div class="photo-grid">
+    <h3>Here is what I have done so far</h3>
+    <div class="photo-container">
+      <img src="KMC.jpeg" alt="KMC photo">
+      <p>Being a part of a techno division back then</p>
+    </div>
+    <div class="photo-container">
+      <img src="SocialWork.jpeg" alt="Social Work">
+      <p>Teaching school students in a remote area.</p>
+    </div>
+  </div>
+
+  <p class="blue-text">_____________________________</p>
+</div>
+
+<div class="responsive-images">
+  <h2>Photos</h2>
+  <div class="image-gallery">
+    <img src="Image1.jpeg" alt="Image 1">
+    <img src="Image2.jpeg" alt="Image 2">
+    <img src="Image3.jpeg" alt="Image 3">
+    <img src="Image4.jpeg" alt="Image 4">
+  </div>
+</div>
+
+</body>
+</html>
